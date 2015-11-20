@@ -1,0 +1,58 @@
+#all {
+	width: 352px;
+	height: 352px;
+	border-style: solid;
+	border-width: 2px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50px;
+	margin: auto;
+}
+.block {
+	width: 86px;
+	height: 86px;
+	border-style: solid;
+	border-width: 1px;
+	position: absolute;
+	background-image: url(image/panda.jpg);
+	background-repeat: no-repeat;
+	transition-duration:0.1s;
+}
+.big {
+	transform:scale(1.05); 
+	z-index: 16;
+}
+.button {
+	position: absolute;
+	top: 3px; 
+	margin: auto;
+	width: 83px;
+	height: 30px;
+	border-width: 1px;
+	border-style: solid;
+}
+.button p {
+	text-align: center;
+	line-height: 30px;
+	font-size: 30px;
+	margin: 0;
+	font-family: "Comic Sans MS";
+}
+#start {
+	left: 10px;
+}
+#end {
+	left: 200px;
+}
+#under {
+	position: absolute;
+	top: 450px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 300px;
+	height: 40px;
+	border-width: 1px;
+	border-style: solid;
+}
