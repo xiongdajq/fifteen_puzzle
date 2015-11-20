@@ -1,12 +1,14 @@
 var empty = 15;
 var tiles;
 var ifstart_bool = false;
+var total_scores = 500;
+var total;
 
 window.onload=function() {
+	total = document.getElementById("score")
 	creat_block();
 	start();
 	mouse();
-	ifwon();
 	end();
 }
 
@@ -55,6 +57,8 @@ function clicked(event) {
 		} else if (curr.current_ == empty+4 || curr.current_ == empty-4) {
 			exchange(curr);
 		}
+		display_score();
+		ifwon();
 	}
 	
 }
@@ -117,6 +121,8 @@ function start() {
 		if (ifstart_bool == false) {
 			upset();
 			ifstart_bool = true;
+			total_scores = 501;
+			display_score();
 		} else {
 			alert("The game has started....If you want to restart, please end the game first.")
 		}
@@ -126,8 +132,11 @@ function end() {
 	var ee = document.getElementById("end");
 	ee.onclick=function() {
 		if (ifstart_bool == true) {
+			restore();
 			ifstart_bool = false;
 			alert("You have quiz the game.");
+			total_scores = 501;
+			display_score();
 		}
 	}
 }
@@ -153,5 +162,20 @@ function won() {
 function ifwon() {
 	if (won() == true) {
 		alert("You Win!");
+		ifstart_bool = false;
 	}
+}
+function restore() {
+	for (var l = 0; l < tiles.length; l++) {
+		tiles[l].current_ = l;
+		var top = Math.floor(l/4)*88;
+		var left = (l%4)*88;
+		tiles[l].style.top=top+'px';
+		tiles[l].style.left=left+'px';
+	}
+	empty = 15;
+}
+function display_score() {
+	total_scores--;
+	total.textContent=total_scores.toString();
 }

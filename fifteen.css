@@ -32,7 +32,7 @@
 	border-width: 1px;
 	border-style: solid;
 }
-.button p {
+.button p, #score_all p, #score p{
 	text-align: center;
 	line-height: 30px;
 	font-size: 30px;
@@ -56,3 +56,32 @@
 	border-width: 1px;
 	border-style: solid;
 }
+#score_all {
+	width: 150px;
+	height: 150px;
+	border-width: 1px;
+	border-style: solid;
+	position: absolute;
+	top: 50px;
+}
+#score {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 70px;
+	height: 30px;
+	width: 100px;
+	border-width: 1px;
+	border-style: solid;
+	text-align: center;
+	font-size: 30px;
+	line-height: 30px;
+	font-family: "Comic Sans MS";
+}
+/*#aller {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0;
+}*/
